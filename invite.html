@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vedant & Lakshmi | Hyderabad</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☬</text></svg>">
-// pics 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Tenor+Sans&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
@@ -14,7 +13,6 @@
 <link rel="preload" href="https://pub-1953a6673e864f3488c645252f75de98.r2.dev/April/Demo/download%20(3).jfif" as="image">
 <link rel="preload" href="https://pub-1953a6673e864f3488c645252f75de98.r2.dev/April/Demo/%F0%9F%91%A5%F0%9F%92%97.jfif" as="image">
 <link rel="preload" href="https://pub-1953a6673e864f3488c645252f75de98.r2.dev/April/Demo/%F0%9F%92%96.jfif" as="image">
-// pics 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <style>
@@ -772,9 +770,13 @@ function setupScratch(canvasId, num, onDone) {
     g.addColorStop(0,'#C5D9C5'); g.addColorStop(.5,'#7C9A7E'); g.addColorStop(1,'#C5D9C5');
     ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
     // Responsive font size - scale with card size for mobile visibility
-    const baseFontSize = Math.max(14, Math.round(W * 0.14));
-    ctx.font=`italic 600 ${baseFontSize}px 'Cormorant Garamond'`;
-    ctx.fillStyle='rgba(255,255,255,1)'; ctx.textAlign='center'; ctx.textBaseline='middle';
+    const baseFontSize = Math.max(16, Math.round(W * 0.16));
+    ctx.font=`italic 700 ${baseFontSize}px 'Cormorant Garamond'`;
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+    // Draw text with shadow and stroke for mobile visibility
+    ctx.shadowColor='rgba(0,0,0,0.3)'; ctx.shadowBlur=4; ctx.shadowOffsetX=0; ctx.shadowOffsetY=2;
+    ctx.strokeStyle='rgba(255,255,255,0.5)'; ctx.lineWidth=2.5; ctx.strokeText('scratch me',W/2,H/2);
+    ctx.shadowColor='transparent'; ctx.fillStyle='rgba(255,255,255,1)';
     ctx.fillText('scratch me',W/2,H/2);
     ctx.globalCompositeOperation='destination-out';
     ctx.lineJoin='round'; ctx.lineCap='round';
