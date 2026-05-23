@@ -773,7 +773,7 @@ function setupScratch(canvasId, num, onDone) {
     ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
     ctx.font="italic 500 13px 'Cormorant Garamond'";
     ctx.fillStyle='rgba(255,255,255,.85)'; ctx.textAlign='center'; ctx.textBaseline='middle';
-    ctx.fillText('scratch me',W/2 - 18,H/2);
+    ctx.fillText('scratch me',W/2,H/2);
     ctx.globalCompositeOperation='destination-out';
     ctx.lineJoin='round'; ctx.lineCap='round';
     ctx.lineWidth=Math.max(42,W*.36);
