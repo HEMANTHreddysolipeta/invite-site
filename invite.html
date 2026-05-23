@@ -771,8 +771,10 @@ function setupScratch(canvasId, num, onDone) {
     const g=ctx.createLinearGradient(0,0,W,H);
     g.addColorStop(0,'#C5D9C5'); g.addColorStop(.5,'#7C9A7E'); g.addColorStop(1,'#C5D9C5');
     ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
-    ctx.font="italic 500 13px 'Cormorant Garamond'";
-    ctx.fillStyle='rgba(255,255,255,.85)'; ctx.textAlign='center'; ctx.textBaseline='middle';
+    // Responsive font size - scale with card size for mobile visibility
+    const baseFontSize = Math.max(14, Math.round(W * 0.14));
+    ctx.font=`italic 600 ${baseFontSize}px 'Cormorant Garamond'`;
+    ctx.fillStyle='rgba(255,255,255,1)'; ctx.textAlign='center'; ctx.textBaseline='middle';
     ctx.fillText('scratch me',W/2,H/2);
     ctx.globalCompositeOperation='destination-out';
     ctx.lineJoin='round'; ctx.lineCap='round';
