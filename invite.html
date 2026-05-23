@@ -771,11 +771,9 @@ function setupScratch(canvasId, num, onDone) {
     const g=ctx.createLinearGradient(0,0,W,H);
     g.addColorStop(0,'#C5D9C5'); g.addColorStop(.5,'#7C9A7E'); g.addColorStop(1,'#C5D9C5');
     ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
-    // Responsive font size so the overlay text remains visible on small screens
-    const fontSize = Math.max(12, Math.round(W * 0.12));
-    ctx.font = `italic 500 ${fontSize}px 'Cormorant Garamond'`;
-    ctx.fillStyle = 'rgba(255,255,255,0.95)'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    ctx.fillText('scratch me', W/2, H/2);
+    ctx.font="italic 500 13px 'Cormorant Garamond'";
+    ctx.fillStyle='rgba(255,255,255,.85)'; ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText('scratch me',W/2 - 18,H/2);
     ctx.globalCompositeOperation='destination-out';
     ctx.lineJoin='round'; ctx.lineCap='round';
     ctx.lineWidth=Math.max(42,W*.36);
