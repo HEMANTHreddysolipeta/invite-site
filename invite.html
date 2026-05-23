@@ -774,10 +774,11 @@ function setupScratch(canvasId, num, onDone) {
     ctx.font=`italic 700 ${baseFontSize}px 'Cormorant Garamond'`;
     ctx.textAlign='center'; ctx.textBaseline='middle';
     // Draw text with shadow and stroke for mobile visibility
+    const textY = H/2 - 6; // Slight upward offset for better positioning
     ctx.shadowColor='rgba(0,0,0,0.3)'; ctx.shadowBlur=4; ctx.shadowOffsetX=0; ctx.shadowOffsetY=2;
-    ctx.strokeStyle='rgba(255,255,255,0.5)'; ctx.lineWidth=2.5; ctx.strokeText('scratch me',W/2,H/2);
+    ctx.strokeStyle='rgba(255,255,255,0.5)'; ctx.lineWidth=2.5; ctx.strokeText('scratch me',W/2,textY);
     ctx.shadowColor='transparent'; ctx.fillStyle='rgba(255,255,255,1)';
-    ctx.fillText('scratch me',W/2,H/2);
+    ctx.fillText('scratch me',W/2,textY);
     ctx.globalCompositeOperation='destination-out';
     ctx.lineJoin='round'; ctx.lineCap='round';
     ctx.lineWidth=Math.max(42,W*.36);
